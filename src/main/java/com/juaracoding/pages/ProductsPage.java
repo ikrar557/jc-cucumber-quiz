@@ -1,10 +1,13 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.lang.model.element.Name;
 
 public class ProductsPage {
     private WebDriver driver;
@@ -52,6 +55,12 @@ public class ProductsPage {
 
     @FindBy (xpath = "//div[.='Test.allTheThings() T-Shirt (Red)']")
     private WebElement redTShirtTitleTxt;
+
+    @FindBy (name = "remove-test.allthethings()-t-shirt-(red)")
+    private WebElement removeProductRedTShirt;
+
+    @FindBy (name = "remove-sauce-labs-bolt-t-shirt")
+    private WebElement removeProductBoltTShirt;
 
 
     public void clickAddBackpack(){
@@ -105,4 +114,14 @@ public class ProductsPage {
     public String getRedTShirtTitleTxt(){
         return redTShirtTitleTxt.getText();
     }
+
+    public void clickRemoveProductRedTShirt(){
+        removeProductRedTShirt.click();
+    }
+
+    public void clickRemoveProductBoltTShirt(){
+        removeProductBoltTShirt.click();
+    }
+
+
 }

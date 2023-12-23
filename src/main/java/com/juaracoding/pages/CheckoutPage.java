@@ -54,15 +54,18 @@ public class CheckoutPage {
     @FindBy (name = "back-to-products")
     private WebElement backToProductsButton;
 
-    public void setFirstName(String firstName){
+    public void setFirstNameField(String firstName){
+        this.firstNameField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         this.firstNameField.sendKeys(firstName);
     }
 
     public void setLastNameField(String lastName){
+        this.lastNameField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         this.lastNameField.sendKeys(lastName);
     }
 
     public void setPostalCodeField(String postalCode){
+        this.postalCodeField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         this.postalCodeField.sendKeys(postalCode);
     }
 

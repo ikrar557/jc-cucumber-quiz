@@ -42,7 +42,7 @@ public class MainTest {
         CheckoutPage checkoutPage = new CheckoutPage();
 
         checkoutPage.clickCheckoutButton();
-        checkoutPage.setFirstName("Ikrar");
+        checkoutPage.setFirstNameField("Ikrar");
         checkoutPage.setLastNameField("Bagaskara");
         checkoutPage.setPostalCodeField("57474");
         checkoutPage.clickContinueCheckout();

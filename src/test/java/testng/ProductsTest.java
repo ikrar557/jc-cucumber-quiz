@@ -30,4 +30,12 @@ public class ProductsTest extends TestBase{
         Assert.assertEquals(productsPage.getRedTShirtTitleTxt(), "Test.allTheThings() T-Shirt (Red)");
     }
 
+    @Test (priority = 2)
+    public void testRemoveProductTShirt(){
+        productsPage.clickRemoveProductRedTShirt();
+        productsPage.clickRemoveProductBoltTShirt();
+
+        // TODO: Add assert to check if removed product is work
+    }
+
 }
