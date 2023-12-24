@@ -76,4 +76,8 @@ public class LoginPage {
     public String getProductHomePageTxt(){
         return productHomePage.getText();
     }
+
+    public String getLoginButtonValue(){
+        return btnLogin.getAttribute("value");
+    }
 }

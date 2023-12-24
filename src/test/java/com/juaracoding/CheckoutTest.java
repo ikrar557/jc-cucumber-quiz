@@ -5,7 +5,6 @@ import com.juaracoding.pages.CheckoutPage;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import com.relevantcodes.extentreports.LogStatus;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -129,6 +128,31 @@ public class CheckoutTest {
     public void user_back_to_products_homepage(){
         checkoutPage.clickBackToProductsButton();
         Assert.assertEquals(loginPage.getProductHomePageTxt(), "Products");
-        extentTest.log(LogStatus.PASS, "User give valid information");
+        extentTest.log(LogStatus.PASS, "User back to products homepage");
+    }
+
+    // 6, Scenario: User logout from website
+    @Given("User in the products homepage")
+    public void user_in_the_products_homepage(){
+        Assert.assertEquals(loginPage.getProductHomePageTxt(), "Products");
+        extentTest.log(LogStatus.PASS, "User in the products homepage");
+    }
+
+    @When("User click side bar button")
+    public void user_click_side_bar_button(){
+        checkoutPage.clickSideBarButton();
+        extentTest.log(LogStatus.PASS, "User click side bar button");
+    }
+
+    @And("User click logout button")
+    public void user_click_logout_button(){
+        checkoutPage.clickLogoutButton();
+        extentTest.log(LogStatus.PASS, "User click logout button");
+    }
+
+    @Then("User logged out from website")
+    public void user_logged_out_from_website(){
+        Assert.assertEquals(loginPage.getLoginButtonValue(), "Login");
+        extentTest.log(LogStatus.PASS, "User logged out from website");
     }
 }

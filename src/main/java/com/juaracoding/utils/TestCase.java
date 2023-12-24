@@ -20,7 +20,9 @@ public enum TestCase {
 
     T9("User input valid information"),
 
-    T10("User completes checkout after successful Scenario #4");
+    T10("User completes checkout after successful Scenario #4"),
+
+    T11("User logout from website");
 
 
     private String testCaseName;

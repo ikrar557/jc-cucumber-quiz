@@ -1,6 +1,7 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
+import io.cucumber.java.ja.且つ;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,6 +54,12 @@ public class CheckoutPage {
 
     @FindBy (name = "back-to-products")
     private WebElement backToProductsButton;
+
+    @FindBy (id = "react-burger-menu-btn")
+    private WebElement sideBarButton;
+
+    @FindBy (id = "logout_sidebar_link")
+    private WebElement logoutSideBarButton;
 
     public void setFirstNameField(String firstName){
         this.firstNameField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -108,6 +115,14 @@ public class CheckoutPage {
         backToProductsButton.click();
     }
 
+    public void clickSideBarButton(){
+        sideBarButton.click();
+    }
+
+    public void clickLogoutButton(){
+        logoutSideBarButton.click();
+    }
+
     public void performUserCheckoutInformation(String firstName, String lastName, String postalCode){
         this.firstNameField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         this.lastNameField.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -116,6 +131,11 @@ public class CheckoutPage {
         this.lastNameField.sendKeys(lastName);
         this.postalCodeField.sendKeys(postalCode);
         continueCheckoutButton.click();
+    }
+
+    public void performUserLogout(){
+        clickSideBarButton();
+        clickLogoutButton();
     }
 
 }

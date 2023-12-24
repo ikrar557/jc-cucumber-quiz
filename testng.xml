@@ -37,6 +37,7 @@
                     <include name="testValidInformation"/>
                     <include name="testFinishingCheckout"/>
                     <include name="testBackToProducts"/>
+                    <include name="testLogoutUser"/>
                 </methods>
             </class>
         </classes>

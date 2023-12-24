@@ -1,8 +1,6 @@
 package testng;
 
 import com.juaracoding.pages.CheckoutPage;
-import com.juaracoding.pages.ProductsPage;
-import io.cucumber.java.bs.A;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -54,6 +52,12 @@ public class CheckoutTest extends TestBase{
     public void testBackToProducts(){
         checkoutPage.clickBackToProductsButton();
         Assert.assertEquals(loginPage.getProductHomePageTxt(), "Products");
+    }
+
+    @Test(priority = 8)
+    public void testLogoutUser(){
+        checkoutPage.performUserLogout();
+        Assert.assertEquals(loginPage.getLoginButtonValue(), "Login");
     }
 
 

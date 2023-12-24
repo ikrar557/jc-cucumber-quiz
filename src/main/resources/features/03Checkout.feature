@@ -38,3 +38,10 @@ Feature: Checkout
     Given User give valid information
     When User finishing checkout
     Then User back to products homepage
+
+  #6
+  Scenario: User logout from website
+    Given User in the products homepage
+    When User click side bar button
+    And User click logout button
+    Then User logged out from website
